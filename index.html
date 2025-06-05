@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 优化卡片图片设置（高清、竖版比例） -->
     <meta property="og:image" content="https://img.wailiantu.com//uploads/20250605/VjUudmYK4FvLnQbOS9py1kqh7gTaCRrt.jpg">
-    <meta property="og:title" content="食谱+365天食谱">
-    <meta property="og:description" content="抖音官方认证">
+    <!-- 优化卡片标题（简洁+emoji+利益点） -->
+    <meta property="og:title" content="每日食谱福利 🥗 | 限时领取">
+    <!-- 优化卡片描述（行动号召+紧迫感） -->
+    <meta property="og:description" content="点击领取365天食谱大全 → 抖音官方认证">
     <title>食谱+365天食谱 | 抖音官方认证</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>安全跳转中 - 企业微信</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
-        // 打开页面后直接跳转
         window.addEventListener('DOMContentLoaded', function() {
             try {
-                // 尝试直接跳转
                 window.location.href = "https://work.weixin.qq.com/ca/cawcde73b8374193e6";
             } catch (e) {
-                // 在console中记录错误，用户界面保持不变以便手动跳转
                 console.error("自动跳转失败:", e);
             }
         });
@@ -47,7 +47,6 @@
             padding: 0 20px;
         }
         
-        /* 顶部绿色横幅 */
         .security-banner {
             background-color: #07C160;
             color: white;
@@ -66,7 +65,6 @@
             font-size: 18px;
         }
         
-        /* Logo区域 */
         .logo-container {
             position: relative;
             width: 100px;
@@ -82,7 +80,6 @@
             object-fit: cover;
         }
         
-        /* 文本样式 */
         .loading-text {
             color: #333333;
             font-size: 22px;
@@ -98,7 +95,6 @@
             line-height: 1.6;
         }
         
-        /* 跳转按钮 */
         .jump-btn {
             background-color: #07C160;
             color: white;
@@ -127,7 +123,6 @@
             font-size: 20px;
         }
         
-        /* 响应式设计 */
         @media (max-width: 480px) {
             .security-banner {
                 font-size: 13px;
@@ -164,12 +159,11 @@
         <p class="hint-text">如没有自动跳转，请点击下方按钮</p>
         
         <button class="jump-btn" id="jumpButton">
-            <i class="fas fa-external-link-alt"></i> 点击立即前往企业微信
+            <i class="fas fa-external-link-alt"></i> 点击立即领取食谱福利
         </button>
     </div>
 
     <script>
-        // 点击按钮跳转
         document.getElementById('jumpButton').addEventListener('click', function() {
             try {
                 window.location.href = "https://work.weixin.qq.com/ca/cawcde73b8374193e6";
@@ -178,7 +172,6 @@
             }
         });
         
-        // 如果当前在微信内，则提示用户打开外部浏览器
         function checkInWechatBrowser() {
             const ua = navigator.userAgent.toLowerCase();
             if (ua.match(/MicroMessenger/i) == "micromessenger") {
@@ -186,7 +179,6 @@
             }
         }
         
-        // 页面加载完成后检查浏览器环境
         window.addEventListener('load', checkInWechatBrowser);
     </script>
 </body>
