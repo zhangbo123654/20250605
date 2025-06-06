@@ -3,183 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 优化卡片图片设置（高清、竖版比例） -->
-    <meta property="og:image" content="https://img.wailiantu.com//uploads/20250605/VjUudmYK4FvLnQbOS9py1kqh7gTaCRrt.jpg">
-    <!-- 优化卡片标题（简洁+emoji+利益点） -->
-    <meta property="og:title" content="每日食谱福利 🥗 | 限时领取">
-    <!-- 优化卡片描述（行动号召+紧迫感） -->
-    <meta property="og:description" content="点击领取365天食谱大全 → 抖音官方认证">
-    <title>食谱+365天食谱 | 抖音官方认证</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>安全跳转中 - 企业微信</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            try {
-                window.location.href = "https://work.weixin.qq.com/ca/cawcde73b8374193e6";
-            } catch (e) {
-                console.error("自动跳转失败:", e);
-            }
-        });
-    </script>
+    <title>跳转到微信</title>
     <style>
-        * {
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f8f8;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
-        }
-        
-        body {
-            background-color: #FFFFFF;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 500px;
+            height: 100vh;
             text-align: center;
-            padding: 0 20px;
+            color: #333;
         }
-        
-        .security-banner {
-            background-color: #07C160;
-            color: white;
-            font-size: 15px;
+        .header {
+            width: 100%;
+            background-color: #f0f0f0;
             padding: 12px 0;
-            margin-bottom: 40px;
-            text-align: center;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin-bottom: 30px;
         }
-        
-        .security-banner i {
-            margin-right: 8px;
-            font-size: 18px;
-        }
-        
-        .logo-container {
-            position: relative;
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 30px;
-            overflow: hidden;
-            border-radius: 50%;
-        }
-        
-        .wechat-logo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .loading-text {
-            color: #333333;
-            font-size: 22px;
+        .security-notice {
+            color: #07C160;
+            font-size: 14px;
             font-weight: 500;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
         }
-        
-        .hint-text {
-            color: #666666;
+        .wechat-logo {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 20px;
+        }
+        .loading-text {
             font-size: 16px;
             margin-bottom: 30px;
-            line-height: 1.6;
+            color: #666;
         }
-        
-        .jump-btn {
+        .manual-text {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 15px;
+        }
+        .jump-button {
             background-color: #07C160;
             color: white;
             border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 500;
-            padding: 18px 40px;
-            width: 100%;
-            max-width: 320px;
+            border-radius: 25px;
+            padding: 12px 40px;
+            font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.2s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-            box-shadow: 0 4px 8px rgba(7, 193, 96, 0.25);
+            width: 80%;
+            max-width: 300px;
+            box-shadow: 0 2px 10px rgba(7, 193, 96, 0.3);
+            animation: breath 1.5s infinite alternate;
         }
-        
-        .jump-btn:hover {
-            background-color: #05AA4E;
-        }
-        
-        .jump-btn i {
-            margin-right: 10px;
-            font-size: 20px;
-        }
-        
-        @media (max-width: 480px) {
-            .security-banner {
-                font-size: 13px;
-                padding: 10px 0;
-            }
-            
-            .loading-text {
-                font-size: 20px;
-            }
-            
-            .hint-text {
-                font-size: 15px;
-            }
-            
-            .jump-btn {
-                font-size: 17px;
-                padding: 16px 30px;
-                max-width: 280px;
-            }
+        @keyframes breath {
+            from { opacity: 0.9; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1.02); }
         }
     </style>
 </head>
 <body>
-    <div class="security-banner">
-        <i class="fas fa-check-circle"></i> 本链接已经过SSL安全加密，请放心访问！
+    <div class="header">
+        <div class="security-notice">本链接已经过SSL安全加密，请放心访问！</div>
     </div>
     
-    <div class="container">
-        <div class="logo-container">
-            <img src="https://img.onlinedown.net/download/202403/160152-6603d2705cc3e.jpg" alt="企业微信" class="wechat-logo">
-        </div>
-        
-        <p class="loading-text">正在跳转到企业微信...</p>
-        <p class="hint-text">如没有自动跳转，请点击下方按钮</p>
-        
-        <button class="jump-btn" id="jumpButton">
-            <i class="fas fa-external-link-alt"></i> 点击立即领取食谱福利
-        </button>
-    </div>
+    <img src="https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png" 
+         alt="微信Logo" class="wechat-logo">
+    
+    <div class="loading-text">正在跳转到微信...</div>
+    <div class="manual-text">如果没有自动跳转，请点击下方按钮</div>
+    
+    <button class="jump-button" onclick="window.location.href='https://work.weixin.qq.com/ca/cawcde73b8374193e6'">
+        点击立即前往微信
+    </button>
 
     <script>
-        document.getElementById('jumpButton').addEventListener('click', function() {
-            try {
-                window.location.href = "https://work.weixin.qq.com/ca/cawcde73b8374193e6";
-            } catch (e) {
-                alert('跳转失败，请复制链接在浏览器中打开: https://work.weixin.qq.com/ca/cawcde73b8374193e6');
-            }
-        });
-        
-        function checkInWechatBrowser() {
-            const ua = navigator.userAgent.toLowerCase();
-            if (ua.match(/MicroMessenger/i) == "micromessenger") {
-                alert("检测到您在微信内打开，请点击右上角菜单，选择在浏览器中打开以继续跳转");
-            }
-        }
-        
-        window.addEventListener('load', checkInWechatBrowser);
+        // 3秒后自动跳转
+        setTimeout(function() {
+            window.location.href = 'https://work.weixin.qq.com/ca/cawcde73b8374193e6';
+        }, 3000);
     </script>
 </body>
 </html>
