@@ -3,86 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跳转到微信</title>
+    
+    <!-- 抖音卡片显示内容 -->
+    <title>食谱+360天食谱</title>
+    <meta property="og:title" content="食谱+360天食谱">
+    <meta property="og:description" content="抖音官方认证">
+    <meta property="og:image" content="https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png">
+    <meta property="og:url" content="https://your-redirect-url.com">
+    
+    <!-- 抖音优化标签 -->
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#FF2A63">
+    
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8f8f8;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            padding: 20px;
             text-align: center;
-            color: #333;
         }
-        .header {
+        
+        .container {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 30px;
             width: 100%;
-            background-color: #f0f0f0;
-            padding: 12px 0;
-            margin-bottom: 30px;
+            max-width: 400px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
         }
-        .security-notice {
-            color: #07C160;
+        
+        /* 卡片元素 */
+        .card-header {
+            margin-bottom: 25px;
+        }
+        
+        .card-badge {
+            background: linear-gradient(135deg, #FF2A63 0%, #FF5E94 100%);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 100px;
+            display: inline-block;
             font-size: 14px;
             font-weight: 500;
-        }
-        .wechat-logo {
-            width: 64px;
-            height: 64px;
             margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(255, 42, 99, 0.3);
         }
-        .loading-text {
+        
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        
+        .card-desc {
             font-size: 16px;
-            margin-bottom: 30px;
             color: #666;
         }
-        .manual-text {
-            font-size: 14px;
-            color: #999;
-            margin-bottom: 15px;
+        
+        /* 跳转元素 */
+        .loading-icon {
+            font-size: 50px;
+            margin: 30px 0;
+            animation: spin 2s infinite linear;
+            color: #07C160;
         }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        
+        .countdown {
+            font-weight: bold;
+            color: #FF2A63;
+            font-size: 24px;
+            display: inline-block;
+            min-width: 40px;
+        }
+        
         .jump-button {
-            background-color: #07C160;
+            background: #07C160;
             color: white;
             border: none;
-            border-radius: 25px;
-            padding: 12px 40px;
-            font-size: 16px;
+            border-radius: 50px;
+            padding: 16px 0;
+            font-size: 18px;
+            font-weight: 600;
             cursor: pointer;
-            width: 80%;
-            max-width: 300px;
-            box-shadow: 0 2px 10px rgba(7, 193, 96, 0.3);
-            animation: breath 1.5s infinite alternate;
+            width: 100%;
+            max-width: 280px;
+            box-shadow: 0 6px 15px rgba(7, 193, 96, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-top: 15px;
         }
-        @keyframes breath {
-            from { opacity: 0.9; transform: scale(0.98); }
-            to { opacity: 1; transform: scale(1.02); }
+        
+        .jump-button:after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60px;
+            width: 20px;
+            height: 200%;
+            background: rgba(255,255,255,0.3);
+            transform: rotate(30deg);
+            transition: all 0.6s;
+        }
+        
+        .jump-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(7, 193, 96, 0.6);
+        }
+        
+        .jump-button:hover:after {
+            left: 110%;
+        }
+        
+        .manual-tip {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: rgba(255,255,255,0.8);
+            font-size: 13px;
+        }
+        
+        .logo {
+            margin-bottom: 20px;
+        }
+        
+        .logo img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+        
+        /* 波浪背景 */
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEyMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMCA0My44NjVjODAgLTUgMTYwIC0xNiA0MDAgMTIuMSAzMCAxMCA5MCAyMC42MyA0MDAgLTExLjUgOTAgLTguMDMgMTYwIDQuMDEgMjAwIDExLjM0VjEwMEgwVjQzLjg2NXoiLz48L2c+PC9zdmc+');
+            background-size: 1200px 100px;
+            animation: wave 18s linear infinite;
+            opacity: 0.4;
+            z-index: -1;
+        }
+        
+        .wave2 {
+            animation: wave-reverse 20s linear infinite;
+            opacity: 0.2;
+        }
+        
+        @keyframes wave {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1200px; }
+        }
+        
+        @keyframes wave-reverse {
+            0% { background-position-x: 1200px; }
+            100% { background-position-x: 0; }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="security-notice">本链接已经过SSL安全加密，请放心访问！</div>
+    <div class="container">
+        <div class="wave"></div>
+        <div class="wave wave2"></div>
+        
+        <div class="logo">
+            <img src="https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png" alt="企业微信">
+        </div>
+        
+        <div class="card-header">
+            <div class="card-badge">抖音官方认证</div>
+            <h1 class="card-title">食谱+360天食谱</h1>
+            <p class="card-desc">添加微信获取每日食谱更新</p>
+        </div>
+        
+        <div class="loading-icon">⏳</div>
+        
+        <p class="loading-text">
+            正在为您跳转到企业微信...
+            <br>
+            <span id="countdown" class="countdown">3</span> 秒后自动跳转
+        </p>
+        
+        <button class="jump-button" onclick="redirect()">
+            立即添加企业微信
+        </button>
+        
+        <p class="manual-tip">
+            如果没有自动跳转，请点击上方按钮
+        </p>
     </div>
     
-    <img src="https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png" 
-         alt="微信Logo" class="wechat-logo">
+    <div class="footer">
+        ©2023 食谱+360天食谱 | 官方企业微信服务
+    </div>
     
-    <div class="loading-text">正在跳转到微信...</div>
-    <div class="manual-text">如果没有自动跳转，请点击下方按钮</div>
-    
-    <button class="jump-button" onclick="window.location.href='https://work.weixin.qq.com/ca/cawcde73b8374193e6'">
-        点击立即前往微信
-    </button>
-
     <script>
-        // 3秒后自动跳转
-        setTimeout(function() {
-            window.location.href = 'https://work.weixin.qq.com/ca/cawcde73b8374193e6';
-        }, 3000);
+        // 企业微信跳转链接
+        const redirectUrl = 'https://work.weixin.qq.com/ca/cawcde73b8374193e6';
+        
+        // 重定向函数
+        function redirect() {
+            window.location.href = redirectUrl;
+        }
+        
+        // 倒计时自动跳转
+        let count = 3;
+        const countdownEl = document.getElementById('countdown');
+        
+        const timer = setInterval(() => {
+            count--;
+            countdownEl.textContent = count;
+            
+            if (count <= 0) {
+                clearInterval(timer);
+                redirect();
+            }
+        }, 1000);
     </script>
 </body>
 </html>
